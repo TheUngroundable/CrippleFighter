@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour{
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
     public int health = 3;
+    public int player = 0;
 
     // Use this for initialization
     void Start(){
@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
         if (health<=0){
 
             Die();
+
+        }
+
+        if (transform.position.y < 0){
+
+            Destroy(this.gameObject, 2f);
 
         }
 
@@ -53,4 +59,5 @@ public class Player : MonoBehaviour
         Destroy(bullet, 10.0f);
 
     }
+
 }
