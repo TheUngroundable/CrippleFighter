@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour{
 
-    public GameObject bulletPrefab;
+    //Shooting Attributes
     public Transform bulletSpawn;
 
-
+    //Player Attributes
     public int health = 3;
     public int playerNumber = 0;
+    public Stack<GameObject> inventory;
 
-
+    //Movement Attributes
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
 
+    //Controller Attributes
     public float deadzone = 0.4f;
     private float LxDirection;
     private float RxDirection;
@@ -22,24 +24,27 @@ public class Player : MonoBehaviour{
     private float RzDirection;
 
     // Use this for initialization
+    private void Start()
+    {
+        inventory = new Stack<GameObject>();
+    }
 
-    // Update is called once per frame
     void Update(){
-
+        //Fire Button
         if (Input.GetButtonUp("Fire1")){
 
             Fire();
         
         }
        
-
+        //Falling System
         if (transform.position.y < 0){
 
             Destroy(this.gameObject, 2f);
 
         }
 
-        //Left Analog
+        //Movement System
  
         LxDirection = Input.GetAxis("LHorizontal") * speed;
         LzDirection = Input.GetAxis("LVertical") * speed;
@@ -51,22 +56,15 @@ public class Player : MonoBehaviour{
             RzDirection = Input.GetAxis("RVertical") * rotationSpeed;
 
         }
-
-       
-
-        // Make it move 10 meters per second instead of 10 meters per frame...
+ 
         LzDirection *= Time.deltaTime;
         LxDirection *= Time.deltaTime;
-        //rotation *= Time.deltaTime;
         Vector3 movementDirection = new Vector3(LxDirection, 0, LzDirection);
-        // Move translation along the object's z-axis
         transform.Translate(movementDirection, Space.World);
 
 
         Vector3 targetRotation = new Vector3(RxDirection, 0, RzDirection);
-        //transform.LookAt(targetRotation);
         transform.rotation = Quaternion.LookRotation(targetRotation);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
     
     }
 
@@ -76,19 +74,33 @@ public class Player : MonoBehaviour{
 
     }
 
+    public void AddBullet(GameObject bullet)
+    {
+
+        inventory.Push(bullet);
+
+    }
+
     void Fire(){
 
-        // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
-        bulletPrefab,
-        bulletSpawn.position,
-        bulletSpawn.rotation);
+        if (inventory.Count>0)
+        {
 
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bullet.GetComponent<Bullet>().speed;
-        bullet.GetComponent<Bullet>().owner = this.gameObject;
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 10.0f);
+            GameObject bulletPrefab = inventory.Pop();
+
+            // Create the Bullet from the Bullet Prefab
+            var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+            // Add velocity to the bullet
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bullet.GetComponent<Bullet>().speed;
+            bullet.GetComponent<Bullet>().owner = this.gameObject;
+            // Destroy the bullet after 2 seconds
+            Destroy(bullet, 10.0f);
+
+        }
 
     }
 
