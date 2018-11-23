@@ -11,13 +11,17 @@ public class Player : MonoBehaviour{
     public int health = 3;
     public int playerNumber = 0;
     public Stack<GameObject> inventory;
+    public bool hasSpecial = false;
 
     //Movement Attributes
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
 
+    //Utility
+    public Combo combo;
+
     //Controller Attributes
-    public float deadzone = 0.4f;
+    public float deadzone = 0.5f;
     private float LxDirection;
     private float RxDirection;
     private float LzDirection;
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour{
     private void Start()
     {
         inventory = new Stack<GameObject>();
+        combo = new Combo();
     }
 
     void Update(){
@@ -36,7 +41,14 @@ public class Player : MonoBehaviour{
             Fire();
         
         }
-       
+
+        if (Input.GetButtonUp("Evaluate"))
+        {
+
+            Evaluate();
+
+        }
+
         //Falling System
         if (transform.position.y < 0){
 
@@ -76,17 +88,39 @@ public class Player : MonoBehaviour{
 
     public void AddBullet(GameObject bullet)
     {
+        if(!hasSpecial)
+            inventory.Push(bullet);
+    }
 
-        inventory.Push(bullet);
+    public void Evaluate()
+    {
+        if (inventory.Count == 3)
+        {
 
+            Debug.Log("Evaluate");
+            GameObject bullet = combo.Bullet(inventory);
+            //clear stack
+            inventory.Clear();
+            //push bullet
+            inventory.Push(bullet);
+            hasSpecial = true;
+
+        }
     }
 
     void Fire(){
 
         if (inventory.Count>0)
         {
-
+            
             GameObject bulletPrefab = inventory.Pop();
+
+            if (hasSpecial)
+            {
+
+                hasSpecial = false;
+
+            }
 
             // Create the Bullet from the Bullet Prefab
             var bullet = (GameObject)Instantiate(

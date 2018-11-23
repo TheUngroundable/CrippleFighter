@@ -6,18 +6,8 @@ public class Bullet : MonoBehaviour {
 
     public GameObject owner;
     public int damage = 1;
-    public float speed = 10;
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float speed = 100;
+    public int code = 0;
 
     void OnCollisionEnter(Collision col)
     {
@@ -26,6 +16,7 @@ public class Bullet : MonoBehaviour {
         {
 
             col.gameObject.GetComponent<Player>().TakeDamage(damage);
+            Destroy(this.gameObject, 0.5f);
 
         }
     }

@@ -11,9 +11,16 @@ public class Pickup : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
 
+            Player player = col.gameObject.GetComponent<Player>();
             //Add this bullet to player inventory
-            col.gameObject.GetComponent<Player>().AddBullet(bullet);
-        
+
+            if (player.inventory.Count < 3 && !player.hasSpecial)
+            {
+
+                player.AddBullet(bullet);
+                Destroy(this.gameObject);
+
+            }
         }
     }
 }
