@@ -31,12 +31,7 @@ public class Player : MonoBehaviour{
             Fire();
         
         }
-        //Death conditions
-        if (health<=0){
-
-            Die();
-
-        }
+       
 
         if (transform.position.y < 0){
 
@@ -71,8 +66,8 @@ public class Player : MonoBehaviour{
         Vector3 targetRotation = new Vector3(RxDirection, 0, RzDirection);
         //transform.LookAt(targetRotation);
         transform.rotation = Quaternion.LookRotation(targetRotation);
-        Debug.Log("Lx: " + LxDirection + "; Lz: " + LzDirection + " - Rx: " + RxDirection + "; Rz: " + RzDirection);
-  
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.green);
+    
     }
 
     void Die(){
@@ -94,6 +89,20 @@ public class Player : MonoBehaviour{
         bullet.GetComponent<Bullet>().owner = this.gameObject;
         // Destroy the bullet after 2 seconds
         Destroy(bullet, 10.0f);
+
+    }
+
+    public void TakeDamage(int damage)
+    {
+
+        health -= damage;
+
+        if (health <= 0)
+        {
+
+            Die();
+
+        }
 
     }
 
