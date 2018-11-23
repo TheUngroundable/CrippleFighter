@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour {
 
     public GameObject owner;
     public int damage = 1;
+    public float speed = 10;
+
 
     // Use this for initialization
     void Start () {
