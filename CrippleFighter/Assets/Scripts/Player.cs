@@ -19,6 +19,7 @@ public class Player : MonoBehaviour{
 
     //Utility
     public Combo combo;
+    public GameObject turret;
 
     //Controller Attributes
     public float deadzone = 0.5f;
@@ -46,6 +47,14 @@ public class Player : MonoBehaviour{
         {
 
             Evaluate();
+
+        }
+
+        if (Input.GetButtonUp("Activate"))
+        {
+
+            if(turret != null)
+                Activate();
 
         }
 
@@ -135,6 +144,13 @@ public class Player : MonoBehaviour{
             Destroy(bullet, 10.0f);
 
         }
+
+    }
+
+    void Activate()
+    {
+
+        turret.GetComponent<Turret>().owner = this.gameObject;
 
     }
 
