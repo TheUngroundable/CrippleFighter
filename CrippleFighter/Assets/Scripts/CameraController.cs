@@ -1,25 +1,93 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
 
-    public GameObject player;       //Public variable to store a reference to the player game object
+    public List<Transform> targets;
+    public Vector3 offset;
+    private Vector3 velocity;
+    public float smoothTime = .5f;
 
+    public float minZoom = 40f;
+    public float maxZoom = 10f;
+    public float zoomLimiter = 50f;
 
-    private Vector3 offset;         //Private variable to store the offset distance between the player and camera
+    private Camera cam;
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
-        offset = transform.position - player.transform.position;
+        cam = GetComponent<Camera>();
     }
 
-    // LateUpdate is called after Update each frame
-    void LateUpdate()
+    private void LateUpdate()
     {
-        // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        transform.position = player.transform.position + offset;
+
+        if(targets.Count == 0)
+            return;
+    
+        Move();
+        Zoom();
+     
     }
+
+    void Move()
+    {
+
+        Vector3 centerPoint = GetCenterPoint();
+
+        Vector3 newPosition = centerPoint + offset;
+
+        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+
+
+    }
+
+    void Zoom()
+    {
+
+        float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
+
+    }
+
+    float GetGreatestDistance()
+    {
+
+        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        for(int i = 0; i < targets.Count; i++)
+        {
+
+            bounds.Encapsulate(targets[i].position);
+
+        }
+
+        return bounds.size.x;
+
+    }
+
+    Vector3 GetCenterPoint()
+    {
+
+        if(targets.Count == 1)
+        {
+
+            return targets[0].position;
+
+        }
+
+        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        for(int i = 0; i < targets.Count; i++)
+        {
+
+            bounds.Encapsulate(targets[i].position);
+
+        }
+
+        return bounds.center;
+
+    }
+
 }

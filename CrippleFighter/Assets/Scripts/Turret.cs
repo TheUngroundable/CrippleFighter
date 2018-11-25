@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour {
         inRange = new List<GameObject>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(owner != null)
         {

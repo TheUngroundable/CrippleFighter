@@ -129,7 +129,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 90
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &114103547516245132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,10 +141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d97deeb9e7d914981b9f1e342bc5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1941334664609700, guid: ed734fa91c0d5304fa63735d8431f043,
-    type: 2}
   bulletSpawn: {fileID: 4282266062085700}
   health: 3
+  playerNumber: 0
+  hasSpecial: 0
+  speed: 10
+  rotationSpeed: 100
+  combo: {fileID: 0}
+  turret: {fileID: 0}
+  deadzone: 0.5
 --- !u!136 &136624857426581076
 CapsuleCollider:
   m_ObjectHideFlags: 1
