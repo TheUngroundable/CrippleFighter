@@ -21,6 +21,7 @@ public class Player : MonoBehaviour{
     public Combo combo;
     public GameObject turret;
     public Animator anim;
+    public Camera cam;
 
     //Controller Attributes
     public float deadzone = 0.5f;
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour{
         inventory = new Stack<GameObject>();
         combo = new Combo();
         anim = GetComponent<Animator>();
+        cam = (Camera)FindObjectOfType(typeof(Camera));
     }  
 
     void Update(){
@@ -61,16 +63,16 @@ public class Player : MonoBehaviour{
         }
 
         //Falling System
-        if (transform.position.y < 0){
+        if (transform.position.y < -1){
 
             Destroy(this.gameObject, 2f);
+            cam.GetComponent<CameraController>().targets.Remove(this.transform);
 
         }
 
         //Movement System
  
-        LxDirection = Input.GetAxis("LHorizontal") * speed;
-        LzDirection = Input.GetAxis("LVertical") * speed;
+        anim.SetBool("isRunning", false);
 
         if (Mathf.Abs(Input.GetAxis("RHorizontal") )>= deadzone || Mathf.Abs(Input.GetAxis("RVertical")) >= deadzone) 
         {
@@ -79,11 +81,19 @@ public class Player : MonoBehaviour{
             RzDirection = Input.GetAxis("RVertical") * rotationSpeed;
 
         }
- 
-        LzDirection *= Time.deltaTime;
-        LxDirection *= Time.deltaTime;
-        Vector3 movementDirection = new Vector3(LxDirection, 0, LzDirection);
-        transform.Translate(movementDirection, Space.World);
+
+        if (Mathf.Abs(Input.GetAxis("LVertical")) >= deadzone || Mathf.Abs(Input.GetAxis("LHorizontal")) >= deadzone)
+        {
+
+            LxDirection = Input.GetAxis("LHorizontal") * speed * Time.deltaTime;
+            LzDirection = Input.GetAxis("LVertical") * speed * Time.deltaTime;
+            Vector3 movementDirection = new Vector3(LxDirection, 0, LzDirection);
+            transform.Translate(movementDirection, Space.World);
+            anim.SetBool("isRunning", true);
+
+        }
+
+        
 
 
         Vector3 targetRotation = new Vector3(RxDirection, 0, RzDirection);

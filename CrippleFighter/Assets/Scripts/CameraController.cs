@@ -63,9 +63,17 @@ public class CameraController : MonoBehaviour
             bounds.Encapsulate(targets[i].position);
 
         }
+        if (bounds.size.x > bounds.size.z)
+        {
 
-        return bounds.size.x;
+            return bounds.size.x;
 
+        } else
+        {
+
+            return bounds.size.z;
+
+        }
     }
 
     Vector3 GetCenterPoint()
