@@ -20,6 +20,7 @@ public class Player : MonoBehaviour{
     //Utility
     public Combo combo;
     public GameObject turret;
+    public Animator anim;
 
     //Controller Attributes
     public float deadzone = 0.5f;
@@ -33,14 +34,15 @@ public class Player : MonoBehaviour{
     {
         inventory = new Stack<GameObject>();
         combo = new Combo();
-    }
+        anim = GetComponent<Animator>();
+    }  
 
     void Update(){
         //Fire Button
         if (Input.GetButtonUp("Fire1")){
 
             Fire();
-        
+            anim.SetTrigger("shooting");
         }
 
         if (Input.GetButtonUp("Evaluate"))
