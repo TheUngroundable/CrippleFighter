@@ -127,7 +127,7 @@ public class Player : MonoBehaviour{
        
         direction = Rotate(direction, transform.rotation.eulerAngles.y);
         //Direction =Quaternion.AngleAxis(-45, Vector3.up) * Direction;
-        print("Direction is: " + direction);
+        //print("Direction is: " + direction);
 
         anim.SetFloat("VelX", direction.x);
         anim.SetFloat("VelY", direction.y);
@@ -155,7 +155,7 @@ public void AddBullet(GameObject bullet)
         if (inventory.Count == 3)
         {
 
-            Debug.Log("Evaluate");
+            //Debug.Log("Evaluate");
             GameObject bullet = combo.Bullet(inventory);
             //clear stack
             inventory.Clear();
@@ -190,7 +190,7 @@ public void AddBullet(GameObject bullet)
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bullet.GetComponent<Bullet>().speed;
             bullet.GetComponent<Bullet>().owner = this.gameObject;
             // Destroy the bullet after 2 seconds
-            Destroy(bullet, 10.0f);
+            Destroy(bullet, 3.0f);
 
         }
 

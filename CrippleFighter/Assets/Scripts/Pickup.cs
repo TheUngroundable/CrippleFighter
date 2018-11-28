@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour {
 
 	public GameObject bullet;
+    public GameObject manager;
 
     void OnTriggerEnter(Collider col)
     {
@@ -16,7 +17,7 @@ public class Pickup : MonoBehaviour {
 
             if (player.inventory.Count < 3 && !player.hasSpecial)
             {
-
+                manager.GetComponent<Manager>().spawners.Remove(this.gameObject);
                 player.AddBullet(bullet);
                 Destroy(this.gameObject);
 

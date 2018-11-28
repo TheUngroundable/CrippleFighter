@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour {
     public Transform bulletSpawn;
     public GameObject bulletPrefab;
     public bool hasShot = false;
+    public GameObject turretHead;
 
     public Coroutine shooting;
 
@@ -30,7 +31,7 @@ public class Turret : MonoBehaviour {
             if(target != null)
             {
 
-                transform.LookAt(target);
+                turretHead.transform.LookAt(target);
                 
                 Shoot();
 
