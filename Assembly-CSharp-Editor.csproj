@@ -57,25 +57,25 @@
      <Compile Include="Assets\Imported\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
      <None Include="Assets\Imported\Editor\PackageManagerAssembly\PackageImportList.txt" />
  <Reference Include="Unity.ProGrids">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids.Editor">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -318,7 +318,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.17f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="PackageManagerAssembly">
- <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/CrippleFighter/Assets/Imported/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
+ <HintPath>C:/Users/Pakkun/Documents/CrippleFighter/Assets/Imported/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.17f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
