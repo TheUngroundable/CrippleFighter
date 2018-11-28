@@ -45,23 +45,20 @@ public class Player : MonoBehaviour{
 
     void Update(){
         //Fire Button
-        if (Input.GetButtonUp("Fire1")){
-
+        if (Input.GetButtonUp(playerNumber+"Fire")){
             Fire();
             anim.SetTrigger("shooting");
         }
 
-        if (Input.GetButtonUp("Evaluate"))
+        if (Input.GetButtonUp(playerNumber+"Evaluate"))
         {
-
             Evaluate();
 
         }
 
-        if (Input.GetButtonUp("Activate"))
+        if (Input.GetButtonUp(playerNumber+"Activate"))
         {
-
-            if(turret != null)
+            if (turret != null)
                 Activate();
 
         }
@@ -93,16 +90,16 @@ public class Player : MonoBehaviour{
 
         }*/
 
-        var x = Input.GetAxis("LHorizontal");
-        var y = Input.GetAxis("LVertical");
+        var x = Input.GetAxis(playerNumber+"LHorizontal");
+        var y = Input.GetAxis(playerNumber+"LVertical");
+
 
         Move(x,y);
 
-        if (Mathf.Abs(Input.GetAxis("RHorizontal")) >= deadzone || Mathf.Abs(Input.GetAxis("RVertical")) >= deadzone)
+        if (Mathf.Abs(Input.GetAxis(playerNumber+"RHorizontal")) >= deadzone || Mathf.Abs(Input.GetAxis(playerNumber+"RVertical")) >= deadzone)
         {
-
-            RxDirection = Input.GetAxis("RHorizontal") * rotationSpeed;
-            RzDirection = Input.GetAxis("RVertical") * rotationSpeed;
+            RxDirection = Input.GetAxis(playerNumber+"RHorizontal") * rotationSpeed;
+            RzDirection = Input.GetAxis(playerNumber+"RVertical") * rotationSpeed;
 
         }
 
