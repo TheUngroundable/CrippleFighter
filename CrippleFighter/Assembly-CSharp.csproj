@@ -72,6 +72,7 @@
      <None Include="Assets\Imported\EffectExamples\Misc Effects\Shaders\Dissolve.shader" />
      <None Include="Assets\Imported\EffectExamples\Misc Effects\Shaders\FireFly.shader" />
      <None Include="Assets\Imported\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
+     <None Include="Assets\AlwaysVisible\AlwaysVisible.shader" />
      <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Imported\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Imported\EffectExamples\Misc Effects\Shaders\Respawn.shader" />
