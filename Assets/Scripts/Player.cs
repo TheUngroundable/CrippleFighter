@@ -6,7 +6,6 @@ public class Player : MonoBehaviour{
 
     //Components
     private Animator anim;
-    private Rigidbody rb;
 
     //Shooting Attributes
     public Transform bulletSpawn;
@@ -22,7 +21,7 @@ public class Player : MonoBehaviour{
     public float rotationSpeed = 100.0f;
 
     //Utility
-    public Combo combo;
+    private Combo combo;
     public GameObject turret;
     public Camera cam;
 
@@ -40,7 +39,6 @@ public class Player : MonoBehaviour{
         combo = new Combo();
         anim = GetComponent<Animator>();
         cam = (Camera)FindObjectOfType(typeof(Camera));
-        rb = GetComponent<Rigidbody>();
     }  
 
     void Update(){
@@ -67,9 +65,10 @@ public class Player : MonoBehaviour{
         if (transform.position.y < -1){
 
             Destroy(this.gameObject, 2f);
-            cam.GetComponent<CameraController>().targets.Remove(this.transform);
-
+            RemoveFromCamera();
         }
+
+        
 
         //Movement System
 
@@ -110,7 +109,15 @@ public class Player : MonoBehaviour{
 
     void Die(){
 
+        RemoveFromCamera();
         Destroy(this.gameObject);
+
+    }
+
+    void RemoveFromCamera()
+    {
+
+        cam.GetComponent<CameraController>().targets.Remove(this.transform);
 
     }
 
