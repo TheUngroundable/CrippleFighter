@@ -268,7 +268,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &346381686
 SphereCollider:
@@ -636,11 +636,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  offset: {x: 0, y: 50, z: -50}
-  smoothTime: 0.5
-  minZoom: 100
+  offset: {x: 0, y: 60, z: -50}
+  smoothTime: 0.1
+  minZoom: 30
   maxZoom: 20
-  zoomLimiter: 100
+  zoomLimiter: 80
 --- !u!1001 &657877436
 Prefab:
   m_ObjectHideFlags: 0
@@ -1066,7 +1066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 95124065532363512, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
@@ -1100,7 +1100,12 @@ Prefab:
     - target: {fileID: 114559788390169932, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
       propertyPath: health
-      value: 10
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 54794819910024826, guid: 5ebac3ef28d3d1443910253cd9310515,
+        type: 2}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
@@ -1605,7 +1610,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 95124065532363512, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
@@ -1686,6 +1691,11 @@ Prefab:
         type: 2}
       propertyPath: health
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54794819910024826, guid: 5ebac3ef28d3d1443910253cd9310515,
+        type: 2}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}

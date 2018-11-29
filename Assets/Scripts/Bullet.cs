@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour {
     public int damage = 1;
     public float speed = 100;
     public int code = 0;
+    public int knockback = 10;
+    public int despawnTime = 1;
 
     void OnCollisionEnter(Collision col)
     {
@@ -15,9 +17,10 @@ public class Bullet : MonoBehaviour {
         if (col.gameObject.tag == "Player" && col.gameObject!=owner)
         {
 
-            col.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*5f, ForceMode.Impulse);
+            col.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*knockback, ForceMode.Impulse);
             col.gameObject.GetComponent<Player>().TakeDamage(damage);
-            Destroy(this.gameObject, 0.5f);
+            Destroy(GetComponent<Bullet>());
+            Destroy(this.gameObject, despawnTime);
 
         }
     }

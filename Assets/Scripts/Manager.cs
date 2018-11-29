@@ -76,11 +76,10 @@ public class Manager : MonoBehaviour {
     {
 
         Debug.Log(collider.radius);
-        //transform.position = Random.insideUnitSphere * 5;
 
         Vector2 position = Random.insideUnitCircle;
 
-        int random = Random.Range(0,spawnersPrefab.Count-1);
+        int random = Random.Range(0, spawnersPrefab.Count);
         GameObject spawner = Instantiate(spawnersPrefab[random], new Vector3(position.x, 0, position.y) * collider.radius, Quaternion.identity);
         spawners.Add(spawner);
         spawner.GetComponent<Pickup>().manager = this.gameObject;
