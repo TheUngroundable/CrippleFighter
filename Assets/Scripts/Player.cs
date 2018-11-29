@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour{
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour{
     private float LzDirection;
     private float RzDirection;
 
+    public Text playerStats;
+
     // Use this for initialization
     private void Start()
     {
@@ -42,6 +45,14 @@ public class Player : MonoBehaviour{
     }  
 
     void Update(){
+
+        if (health <= 0)
+        {
+            health = 0;
+            Die();
+
+        }
+
         //Fire Button
         if (Input.GetButtonUp(playerNumber+"Fire")){
             Fire();
@@ -53,22 +64,16 @@ public class Player : MonoBehaviour{
             Evaluate();
 
         }
-
-        if (Input.GetButtonUp(playerNumber+"Activate"))
-        {
-            if (turret != null)
-                Activate();
-
-        }
+        playerStats.text = "" + transform.name + ": LifePoints: " + health + " ; AMMOS: " + inventory.Count;
 
         //Falling System
-        if (transform.position.y < -1){
+        if (transform.position.y < -3){
 
-            Destroy(this.gameObject, 2f);
-            RemoveFromCamera();
+            Die();
         }
 
-        
+
+
 
         //Movement System
 
@@ -105,6 +110,7 @@ public class Player : MonoBehaviour{
         Vector3 targetRotation = new Vector3(RxDirection, 0, RzDirection);
         transform.rotation = Quaternion.LookRotation(targetRotation);
     
+
     }
 
     void Die(){
@@ -151,7 +157,7 @@ public class Player : MonoBehaviour{
 
     }
 
-public void AddBullet(GameObject bullet)
+    public void AddBullet(GameObject bullet)
     {
         if(!hasSpecial)
             inventory.Push(bullet);
@@ -203,24 +209,11 @@ public void AddBullet(GameObject bullet)
 
     }
 
-    void Activate()
-    {
-
-        turret.GetComponent<Turret>().owner = this.gameObject;
-
-    }
 
     public void TakeDamage(int damage)
     {
 
         health -= damage;
-
-        if (health <= 0)
-        {
-
-            Die();
-
-        }
 
     }
 

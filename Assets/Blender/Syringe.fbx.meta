@@ -11,6 +11,7 @@ ModelImporter:
     100010: //RootNode
     100012: Cube.001
     100014: Cube.002
+    100016: Point
     400000: Camera
     400002: Cube
     400004: Cylinder
@@ -19,12 +20,16 @@ ModelImporter:
     400010: //RootNode
     400012: Cube.001
     400014: Cube.002
+    400016: Point
     2000000: Camera
     2100000: No Name
     2100002: Material.001
     2100004: Material
     2100006: Material.003
     2100008: Material.002
+    2100010: Material.006
+    2100012: Material.004
+    2100014: Material.005
     2300000: Cube
     2300002: Cylinder
     2300004: Sphere
@@ -41,6 +46,7 @@ ModelImporter:
     4300006: Cube.001
     4300008: Cube.002
     10800000: Lamp
+    10800002: Point
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

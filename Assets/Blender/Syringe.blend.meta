@@ -20,16 +20,21 @@ ModelImporter:
     2100004: Material_002
     2100006: Material_003
     2100008: Material
+    2100010: Material_006
+    2100012: Material_004
+    2100014: Material_005
     2300000: Cube
     2300002: Cylinder
     2300004: Sphere
     2300006: Cube_001
     2300008: Cube_002
+    2300010: //RootNode
     3300000: Cube
     3300002: Cylinder
     3300004: Sphere
     3300006: Cube_001
     3300008: Cube_002
+    3300010: //RootNode
     4300000: Sphere
     4300002: Cube
     4300004: Cylinder

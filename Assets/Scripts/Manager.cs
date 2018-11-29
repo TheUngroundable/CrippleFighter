@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Manager : MonoBehaviour {
 
@@ -10,6 +12,9 @@ public class Manager : MonoBehaviour {
     public GameObject camera;
     private SphereCollider collider;
     public int spawnersCooldown = 4;
+    public GameObject victory;
+    public GameObject[] turrets;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -22,10 +27,49 @@ public class Manager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+        Check();
         if (spawners.Count < 5)
         {
             StartCoroutine(CheckSpawners());
+
         }
+
+        if (players.Count == 1)
+        {
+
+            Win();
+
+        }
+       
+    }
+    void Check()
+    {
+
+        for (int i = 0; i < players.Count; i++)
+        {
+
+            if (players[i] == null)
+            {
+
+                players.RemoveAt(i);
+
+            }
+
+        }
+
+    }
+    void Win() {
+
+        foreach(GameObject turret in turrets)
+        {
+
+            turret.GetComponent<Turret>().enabled = false;
+
+        }
+
+        victory.GetComponent<Text>().text = "Winner: "+players[0].transform.name;
+        victory.gameObject.SetActive(true);
     }
 
     IEnumerator CheckSpawners()
