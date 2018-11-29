@@ -537,6 +537,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.049384695
       objectReference: {fileID: 0}
+    - target: {fileID: 114642135942815464, guid: 4ade911982d3e1543a35d8351f405711,
+        type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ade911982d3e1543a35d8351f405711, type: 2}
   m_IsPrefabAsset: 0
@@ -699,6 +704,11 @@ Prefab:
     - target: {fileID: 4077467386661018, guid: 4ade911982d3e1543a35d8351f405711, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.049384695
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642135942815464, guid: 4ade911982d3e1543a35d8351f405711,
+        type: 2}
+      propertyPath: canShoot
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ade911982d3e1543a35d8351f405711, type: 2}
@@ -1027,7 +1037,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: 20.7
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1065,7 +1075,7 @@ Prefab:
     - target: {fileID: 114559788390169932, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
       propertyPath: playerNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 137598983546009606, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
@@ -1086,6 +1096,11 @@ Prefab:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 680387443}
+    - target: {fileID: 114559788390169932, guid: 5ebac3ef28d3d1443910253cd9310515,
+        type: 2}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
   m_IsPrefabAsset: 0
@@ -1381,6 +1396,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.049384695
       objectReference: {fileID: 0}
+    - target: {fileID: 114642135942815464, guid: 4ade911982d3e1543a35d8351f405711,
+        type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ade911982d3e1543a35d8351f405711, type: 2}
   m_IsPrefabAsset: 0
@@ -1534,6 +1554,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.049384695
       objectReference: {fileID: 0}
+    - target: {fileID: 114642135942815464, guid: 4ade911982d3e1543a35d8351f405711,
+        type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ade911982d3e1543a35d8351f405711, type: 2}
   m_IsPrefabAsset: 0
@@ -1551,7 +1576,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -22.98
       objectReference: {fileID: 0}
     - target: {fileID: 4713027767049288, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1589,7 +1614,7 @@ Prefab:
     - target: {fileID: 114559788390169932, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
       propertyPath: playerNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 137598983546009606, guid: 5ebac3ef28d3d1443910253cd9310515,
         type: 2}
@@ -1656,6 +1681,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[11]
       value: 
       objectReference: {fileID: 2100000, guid: 455dcfbb45f9469429f326482d744240, type: 2}
+    - target: {fileID: 114559788390169932, guid: 5ebac3ef28d3d1443910253cd9310515,
+        type: 2}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebac3ef28d3d1443910253cd9310515, type: 2}
   m_IsPrefabAsset: 0

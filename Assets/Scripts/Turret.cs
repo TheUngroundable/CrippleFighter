@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour {
     public Transform target;
     public Transform bulletSpawn;
     public GameObject bulletPrefab;
-    public bool canShoot = false;
+    public bool canShoot = true;
     public GameObject turretHead;
     public float delayTime = 3f;
     public bool enabled = true;
@@ -45,7 +45,6 @@ public class Turret : MonoBehaviour {
 
     void Shoot()
     {
-       
         var bullet = (GameObject)Instantiate(
         bulletPrefab,
         bulletSpawn.position,
@@ -63,7 +62,6 @@ public class Turret : MonoBehaviour {
     {
 
         canShoot = false;
-
         yield return new WaitForSeconds(Random.Range(1, delayTime));
 
         canShoot = true;

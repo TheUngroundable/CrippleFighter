@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour {
         if (col.gameObject.tag == "Player" && col.gameObject!=owner)
         {
 
+            col.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*5f, ForceMode.Impulse);
             col.gameObject.GetComponent<Player>().TakeDamage(damage);
             Destroy(this.gameObject, 0.5f);
 
