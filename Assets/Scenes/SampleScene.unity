@@ -247,6 +247,7 @@ MonoBehaviour:
   - {fileID: 1758538135}
   spawnersPrefab:
   - {fileID: 1745332719108548, guid: ed28bec7519649e4e97296bda32bde56, type: 2}
+  - {fileID: 1847591908558940, guid: 892b4030e8038b944ba1a9712459140d, type: 2}
   spawners: []
   camera: {fileID: 534669902}
   spawnersCooldown: 4
