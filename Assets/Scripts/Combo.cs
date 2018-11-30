@@ -6,45 +6,89 @@ public class Combo : MonoBehaviour {
 
 	private string code;
     
-    public GameObject[] proiettili = new GameObject[3];
+    public Player player;
+    private int steroidsCount = 0;
+    public GameObject sleepingPill;
+    
+    void Start()
+    {
 
-   
-    public GameObject Bullet(Stack<GameObject> inventory)
+        sleepingPill = Resources.Load("Prefabs/Bullets/SleepingBullet") as GameObject;
+
+    }
+
+    public void Special(Stack<GameObject> inventory)
     {
         foreach(GameObject bullet in inventory)
         {
-            /*3214 = 3214*/
-            code += bullet.GetComponent<Bullet>().code;
+
+            code = bullet.GetComponent<Bullet>().code + "" +code ;
 
         }
 
-        proiettili[0] = Resources.Load("Prefabs/Bullets/PurpleBullet") as GameObject;
-        proiettili[1] = Resources.Load("Prefabs/Bullets/YellowBullet") as GameObject;
-
+        Debug.Log("Code: "+code);
         switch (code)
         {
 
             case "000":
+                //SUPERSIZE
+                
+                StartCoroutine(Supersize(4f));
+                player.ClearInventory();
+                break;
 
             case "001":
+                //STEROIDI
+                player.Heal(4);
+                if (steroidsCount == 1)
+                {
+
+                    player.Die();
+
+                } else
+                {
+
+                    steroidsCount++;
+
+                }
+                break;
 
             case "010":
-            
+                //SLEEPING PILLS
+                //player.hasSpecial = true
+                player.ClearInventory();
+                player.AddBullet(sleepingPill);
+                player.hasSpecial = true;
+                break;
+
             case "011":
-                return proiettili[0];
+                //FAST FOOD
+               
             case "100":
+                //BALANCED BREAKFAST
 
             case "101":
+                //DIARREA
 
             case "110":
+                //PUKE FRAG
 
             case "111":
-                return proiettili[1];
-               
+                //DON'T DO IT KIDS
+                
+               break;
         }
         
-        return proiettili[0];
+    code = "";
 
+    }
+
+    IEnumerator Supersize(float delayTime)
+    {
+        player.gameObject.transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
+        yield return new WaitForSeconds(delayTime);
+        player.gameObject.transform.localScale -= new Vector3(1.5f, 1.5f, 1.5f);
+        
     }
 
 }

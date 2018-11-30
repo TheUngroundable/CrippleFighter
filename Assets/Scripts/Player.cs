@@ -39,7 +39,9 @@ public class Player : MonoBehaviour{
     private void Start()
     {
         inventory = new Stack<GameObject>();
-        combo = new Combo();
+        combo = gameObject.AddComponent(typeof(Combo)) as Combo;
+        combo.player = GetComponent<Player>();
+
         anim = GetComponent<Animator>();
         cam = (Camera)FindObjectOfType(typeof(Camera));
     }  
@@ -113,7 +115,7 @@ public class Player : MonoBehaviour{
 
     }
 
-    void Die(){
+    public void Die(){
 
         RemoveFromCamera();
         Destroy(this.gameObject);
@@ -168,14 +170,9 @@ public class Player : MonoBehaviour{
         if (inventory.Count == 3)
         {
 
-            //Debug.Log("Evaluate");
-            GameObject bullet = combo.Bullet(inventory);
-            //clear stack
-            inventory.Clear();
-            //push bullet
-            inventory.Push(bullet);
-            hasSpecial = true;
-
+            combo.Special(inventory);
+            //hasSpecial = true;
+            
         }
     }
 
@@ -217,5 +214,18 @@ public class Player : MonoBehaviour{
 
     }
 
+    public void ClearInventory()
+    {
+
+        inventory.Clear();
+
+    }
+
+    public void Heal(int hp)
+    {
+
+        health += hp;
+
+    }
 }
 
