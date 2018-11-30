@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 492}
   m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
-  controlID: 7709
+  controlID: 110
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 434, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 7710
+  controlID: 111
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,9 +185,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.628897, y: 0.3688109, z: -3.4067118}
+    m_Target: {x: -5.267439, y: 0.36878777, z: 1.6218414}
     speed: 2
-    m_Value: {x: 11.628897, y: 0.3688109, z: -3.4067118}
+    m_Value: {x: -5.267439, y: 0.36878777, z: 1.6218414}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -215,13 +215,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.03620974, y: 0.79800653, z: -0.0481909, w: 0.5996268}
+    m_Target: {x: 0.009231428, y: 0.9365129, z: -0.34963846, w: 0.024729319}
     speed: 2
-    m_Value: {x: 0.036209736, y: 0.7980065, z: -0.0481909, w: 0.5996268}
+    m_Value: {x: 0.009231428, y: 0.9365129, z: -0.34963846, w: 0.024729319}
   m_Size:
-    m_Target: 0.9530744
+    m_Target: 39.831482
     speed: 2
-    m_Value: 0.9530744
+    m_Value: 39.831482
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_MinSize: {x: 434, y: 271}
   m_MaxSize: {x: 14004, y: 10021}
   vertical: 0
-  controlID: 7844
+  controlID: 112
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -372,8 +372,8 @@ MonoBehaviour:
     y: 0
     width: 253
     height: 271
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -406,9 +406,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 620cfeff
-    m_LastClickedID: -127902
-    m_ExpandedIDs: c672ffff6ef8ffff000000004a380000
+    m_SelectedIDs: 9c0e0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -494,20 +494,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Bullets
+    - Assets/Imported
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Prefabs/Bullets
+  - Assets/Imported
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Pakkun\Documents\CrippleFighter
+  m_LastProjectPath: C:\Users\Steek Hutsy\Documents\GitHub\CrippleFighter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 647}
-    m_SelectedIDs: ae330000
-    m_LastClickedID: 13230
-    m_ExpandedIDs: 00000000342b0000642c00008e2c0000042d00001a2e0000fa310000423300007e3500009e350000a4350000ae3500005c3600006a370000963a000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 08150000
+    m_LastClickedID: 5384
+    m_ExpandedIDs: 000000008e0a0000be0b0000e80b0000600c0000740d0000541100009c120000d8140000f8140000fe14000008150000b4150000c2160000883a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -535,7 +535,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000342b0000642c00008e2c0000042d00001a2e0000fa310000423300007e3500009e350000a4350000ae3500005c3600006a370000963a000000ca9a3b
+    m_ExpandedIDs: 000000008e0a0000be0b0000e80b0000600c0000740d0000541100009c120000d8140000f8140000fe14000008150000b4150000c2160000883a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -560,8 +560,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 620cfeff
-    m_LastClickedInstanceID: -127902
+    m_SelectedInstanceIDs: 9c0e0000
+    m_LastClickedInstanceID: 3740
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000023200008e4f00006457ffff267e00006656000092380000f43400007813000044310000
     m_RenameOverlay:
